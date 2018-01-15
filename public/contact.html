@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Desafio Resultados Digitais - Client</h1>
+    <div>
+      <a href="/">Home</a>
+      <a href="/price.html">Preço</a>
+      <a href="/contact.html">Contato</a>
+      <a href="/about.html">Sobre</a>
+    </div>
+    <div>
+      <h1>Contato</h1>
+      <form id="form-contact">
+        <p>
+          <label for="email">E-mail:</label>
+          <input 
+            id="email"
+            name="email" 
+            type="email" 
+            title="E o seu e-mail, qual é?" 
+            placeholder="Digite aqui seu e-mail =)"
+            required>
+          </input>
+        </p>
+        <p>
+          <button title="Enviar informações">Enviar</button>
+        </p>
+      </form>
+    </div>
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script charset="utf-8" src="cookie.js"></script>
+    <script>
+      $(function() {
+        $('#form-contact').submit((e) => {
+          e.preventDefault()
+
+          let email = document.getElementById('email').value
+          CookieHandler.post(email)
+        })
+      })
+    </script>
+  </body>
+</html>
